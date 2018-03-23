@@ -1,5 +1,9 @@
 # array-table-search
 
+[![npm](https://img.shields.io/npm/v/array-table-search.svg?style=flat-square)](https://www.npmjs.com/package/array-table-search)
+[![Travis branch](https://img.shields.io/travis/aichbauer/node-array-table-search/master.svg?style=flat-square)](https://travis-ci.org/aichbauer/node-array-table-search)
+[![Codecov branch](https://img.shields.io/codecov/c/github/aichbauer/node-array-table-search/master.svg?style=flat-square)](https://codecov.io/gh/aichbauer/node-array-table-search)
+
 > Search on an array that are that holds data for tables
 
 ## Table of Contents
