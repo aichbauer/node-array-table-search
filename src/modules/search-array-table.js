@@ -21,7 +21,11 @@ export const searchArrayTable = (data, options) => {
     data.forEach((item) => {
       const currentItemValues = Object
         .values(item)
-        .map((val) => val.toString().toLowerCase());
+        .map((val) => {
+          const result = val ? val.toString().toLowerCase() : '';
+
+          return result;
+        });
 
       switch (options.type) {
         case 'exact': {

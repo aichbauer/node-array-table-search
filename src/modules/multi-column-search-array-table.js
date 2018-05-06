@@ -23,9 +23,9 @@ const createTableCheck = (data, options, tableCheck) => {
       const currentSearch = searchEntry[1].type;
 
       data.forEach((item, i) => {
-        const currentItemValue = item[searchEntry[0]]
-          .toString()
-          .toLowerCase();
+        const currentItemValue = item[searchEntry[0]] ?
+          item[searchEntry[0]].toString().toLowerCase() :
+          '';
         if (currentItem === searchEntry[0]) {
           switch (currentSearch) {
             case 'exact':
