@@ -25,3 +25,12 @@ export const expectedExactMark = [
     handle: '@mdo',
   },
 ];
+
+export const expectedWithNullAndUndefined = [
+  {
+    number: 1,
+    first: 'Mark',
+    last: undefined,
+    handle: null,
+  },
+];

@@ -1,4 +1,7 @@
-import { data } from '../fixtures/data';
+import {
+  data,
+  dataWithNullAndUndefined,
+} from '../fixtures/data';
 import {
   tableSearchOtpionsIncludes as includes,
   tableSearchOtpionsExact as exact,
@@ -8,6 +11,7 @@ import {
   expectedExactMark,
   expectedIncludesAa,
   expectedIncludesAr,
+  expectedWithNullAndUndefined,
 } from '../fixtures/expected-results';
 import { searchArrayTable as search } from '../../lib';
 
@@ -39,6 +43,18 @@ test('check if data[0...n].first is exact "" (empty string) return whole data se
   const result = search(data, exact(''));
 
   expect(result).toEqual(data);
+});
+
+test('check exact with missing values (e.g. `null` and `undefined`)', () => {
+  const result = search(dataWithNullAndUndefined, exact('mark'));
+
+  expect(result).toEqual(expectedWithNullAndUndefined);
+});
+
+test('check includes with missing values (e.g. `null` and `undefined`)', () => {
+  const result = search(dataWithNullAndUndefined, includes('m'));
+
+  expect(result).toEqual(expectedWithNullAndUndefined);
 });
 
 test('throw error: data has to be array', () => {
