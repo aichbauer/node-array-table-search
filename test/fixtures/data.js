@@ -18,3 +18,24 @@ export const data = [
     handle: '@twitter',
   },
 ];
+
+export const dataWithNullAndUndefined = [
+  {
+    number: 1,
+    first: 'Mark',
+    last: undefined,
+    handle: null,
+  },
+  {
+    number: 2,
+    first: 'Jacob',
+    last: 'Thornton',
+    handle: '@fat',
+  },
+  {
+    number: 3,
+    first: 'Larry',
+    last: 'the Bird',
+    handle: '@twitter',
+  },
+];

@@ -1,4 +1,7 @@
-import { data } from '../fixtures/data';
+import {
+  data,
+  dataWithNullAndUndefined,
+} from '../fixtures/data';
 import {
   multiColumnSearchOtpionsIncludes as includes,
   multiColumnSearchOtpionsExact as exact,
@@ -8,6 +11,7 @@ import {
   expectedExactMark,
   expectedIncludesAa,
   expectedIncludesAr,
+  expectedWithNullAndUndefined,
 } from '../fixtures/expected-results';
 import { multiColumnSearchArrayTable as search } from '../../lib';
 
@@ -33,6 +37,18 @@ test('check if data[0...n].first is exact "mark"', () => {
   const result = search(data, exact('mark'));
 
   expect(result).toEqual(expectedExactMark);
+});
+
+test('check exact with missing values (e.g. `null` and `undefined`)', () => {
+  const result = search(dataWithNullAndUndefined, exact('mark'));
+
+  expect(result).toEqual(expectedWithNullAndUndefined);
+});
+
+test('check includes with missing values (e.g. `null` and `undefined`)', () => {
+  const result = search(dataWithNullAndUndefined, includes('m'));
+
+  expect(result).toEqual(expectedWithNullAndUndefined);
 });
 
 test('throw error: data has to be array', () => {
