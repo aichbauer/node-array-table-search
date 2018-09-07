@@ -1,3 +1,7 @@
+1.0.2 - September, 07 2018
+
+* 517132a Fix: babel runtime (#2) (Lukas Aichbauer)
+
 1.0.1 - May, 06 2018
 
 * 14e0213 Fix: convert null or undefined to empty string (#1) (Lukas Aichbauer)
