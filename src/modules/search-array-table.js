@@ -2,9 +2,9 @@ const checkIfValid = (data) => {
   if (!Array.isArray(data)) {
     throw new Error(`data has to be typeof: ${typeof []} data instanceof Array: ${[] instanceof Array} but got typeof: ${typeof data} data instanceof Array: ${data instanceof Array}`);
   } else if (
-    Array.isArray(data) &&
-    data.length > 0 &&
-    typeof data[0] !== 'object'
+    Array.isArray(data)
+    && data.length > 0
+    && typeof data[0] !== 'object'
   ) {
     throw new Error(`data has to be an array of objects but data[0] got typeof: ${typeof data[0]}`);
   }
@@ -20,9 +20,9 @@ export const searchArrayTable = (data, options) => {
 
     data.forEach((item) => {
       const currentItemValues = Object
-        .values(item)
-        .map((val) => {
-          const result = val ? val.toString().toLowerCase() : '';
+        .keys(item)
+        .map((key) => {
+          const result = item[key] ? item[key].toString().toLowerCase() : '';
 
           return result;
         });

@@ -13,7 +13,7 @@ import {
   expectedIncludesAr,
   expectedWithNullAndUndefined,
 } from '../fixtures/expected-results';
-import { multiColumnSearchArrayTable as search } from '../../lib';
+import { multiColumnSearchArrayTable as search } from '../../src';
 
 test('check if data[0...n].first includes "ar"', () => {
   const result = search(data, includes('ar'));
