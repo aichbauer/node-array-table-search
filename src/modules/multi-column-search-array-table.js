@@ -64,16 +64,15 @@ const createTableCheck = (data, options, tableCheck) => {
 
 export const multiColumnSearchArrayTable = (data, options) => {
   checkIfValid(data);
+  const opts = [];
 
-  const opts = Object
-    .entries(options)
-    .filter((entry) => (
-      typeof entry[1] === 'object'
-      && (
-        entry[1].value
-        || entry[1].value === ''
-      )
-    ));
+  Object
+    .keys(options)
+    .forEach((key) => {
+      const arr = [];
+      arr.push(key.toString(), options[key]);
+      opts.push(arr);
+    });
 
   const emptyTable = data.map(() => []);
 
