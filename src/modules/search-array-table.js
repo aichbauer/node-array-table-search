@@ -20,9 +20,9 @@ export const searchArrayTable = (data, options) => {
 
     data.forEach((item) => {
       const currentItemValues = Object
-        .values(item)
-        .map((val) => {
-          const result = val ? val.toString().toLowerCase() : '';
+        .keys(item)
+        .map((key) => {
+          const result = item[key] ? item[key].toString().toLowerCase() : '';
 
           return result;
         });
